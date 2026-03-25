@@ -1,4 +1,3 @@
-# marketpulse
 # MarketPulse AI – Final Design Report  
 
 ---
@@ -51,7 +50,7 @@ The platform integrates:
 - **Real‑time streaming** of new financial sentiment signals  
 - **Explainability outputs** to justify sentiment classification  
 
-Our upgraded architecture incorporates fast analytics (ClickHouse), a caching layer (Redis), robust text normalization, and modular ingestion pipelines.
+Our architecture incorporates Postgres (via Supabase) with materialized view analytics, a Redis caching layer, robust text normalization, and modular ingestion pipelines.
 
 <br>
 
@@ -68,21 +67,20 @@ Our upgraded architecture incorporates fast analytics (ClickHouse), a caching la
 5. **As a developer/maintainer**, I want structured endpoints and modular ingestion pipelines so that the system can be extended easily.
 
 ### ### Design Diagrams  
-(Images included in final PDF version; described here for report completeness.)
 
 - **Level 0 DFD** – Shows raw data flowing from external sources → sentiment engine → dashboard outputs.  
 
-![Diagram 0](1.jpeg)
+![Diagram 0](app-docs/1.jpeg)
 
 
 - **Level 1 DFD** – Separates ingestion pipelines (Reddit, News, Nitter), preprocessing, AI scoring, and dashboards.  
 
-![Diagram 1](2.jpeg)
+![Diagram 1](app-docs/2.jpeg)
 
 
 - **Level 2 DFD** – Details ingestion micro‑modules, LLM classifier, FinBERT batcher, caching, database storage, and REST API routes.
 
-![Diagram 2](3.jpeg)
+![Diagram 2](app-docs/3.jpeg)
 <br>
 
 ---
@@ -98,7 +96,7 @@ Our upgraded architecture incorporates fast analytics (ClickHouse), a caching la
 6. Implement FinBERT classifier *(Pratyush)*  
 7. Implement LLM classifier with cost‑optimized prompts *(Pratyush)*  
 8. Build ensemble scoring engine *(Pratyush)*  
-9. Create database schema: Postgres + ClickHouse *(Sid)*  
+9. Create database schema: Postgres (Supabase) *(Sid)*  
 10. Implement REST API endpoints *(Pratyush)*  
 11. Add Redis caching *(Sid)*  
 12. Build React dashboard (heatmaps, charts) *(Pratyush)*  
@@ -213,7 +211,7 @@ Software engineering student with strong experience in backend engineering, inge
 
 # ## 10. Appendix  
 
-- **GitHub Repository:** *(Link added upon submission)*  
+- **GitHub Repository:** https://github.com/senior-design-psss/marketpulse
 - **Effort Documentation:** Provided in the matrix above  
 
 ---
